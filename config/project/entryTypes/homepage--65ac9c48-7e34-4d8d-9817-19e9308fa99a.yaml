@@ -36,6 +36,22 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2024-11-13T14:21:44+00:00'
+            elementCondition: null
+            fieldUid: caef1356-0349-4d6c-a6e7-3cb9cbf4caae # Image
+            handle: banner_image
+            includeInCards: false
+            instructions: null
+            label: 'Banner Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 955988e0-765a-4306-9533-6d4ed40215ed
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-11-13T13:40:48+00:00'
             elementCondition: null
             fieldUid: 0fa2114d-a126-45d6-9a44-398ac1506685 # Subtitle
@@ -51,7 +67,7 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
+        name: Banner
         uid: 9a8c9f3a-b344-45c5-84ac-c085afe2d262
         userCondition: null
 handle: homepage

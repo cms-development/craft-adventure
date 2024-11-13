@@ -8,5 +8,7 @@
 <body>
     <h1>{{ entry.title }}</h1>
     <h3>{{ entry.subtitle }}</h3>
+    {% set bannerImage = entry.banner_image.one() %}
+    <img src="{{ bannerImage.url }}" alt="{{ bannerImage.title }}">
 </body>
 </html>
