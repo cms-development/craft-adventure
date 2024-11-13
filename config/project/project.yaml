@@ -1,4 +1,4 @@
-dateModified: 1731501097
+dateModified: 1731503685
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -6,6 +6,7 @@ email:
 meta:
   __names__:
     2c4508b1-08d6-4a8d-8f93-f65a3567bd33: 'Craft Adventure' # Craft Adventure
+    4ab0679b-8d81-40c7-9ae6-ed83c81f7709: 'Public Schema' # Public Schema
     4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
 system:
   edition: solo
