@@ -1,0 +1,8 @@
+baseUrl: $PRIMARY_SITE_URL
+handle: default
+hasUrls: true
+language: en-US
+name: 'Craft Adventure'
+primary: true
+siteGroup: 2c4508b1-08d6-4a8d-8f93-f65a3567bd33 # Craft Adventure
+sortOrder: 1

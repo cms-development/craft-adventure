@@ -1,0 +1,22 @@
+dateModified: 1731501097
+email:
+  fromEmail: frederick@rogerthat.be
+  fromName: 'Craft Adventure'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    2c4508b1-08d6-4a8d-8f93-f65a3567bd33: 'Craft Adventure' # Craft Adventure
+    4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
+system:
+  edition: solo
+  live: true
+  name: 'Craft Adventure'
+  schemaVersion: 5.5.0.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  require2fa: false
+  requireEmailVerification: true
