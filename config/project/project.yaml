@@ -1,4 +1,4 @@
-dateModified: 1732714118
+dateModified: 1732716121
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -20,6 +20,7 @@ meta:
     7ede29f1-a5b0-4199-a5eb-3ead0a9e434b: 'Primary Navigation' # Primary Navigation
     64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa: Adventures # Adventures
     65ac9c48-7e34-4d8d-9817-19e9308fa99a: Homepage # Homepage
+    156f3a3e-e29f-4f97-a114-e891664bfd22: 'Card Thumbnail' # Card Thumbnail
     9450365f-cc76-4e56-aca0-d4c709fbd40b: Homepage # Homepage
     caef1356-0349-4d6c-a6e7-3cb9cbf4caae: Image # Image
     cef39ee2-c0e2-4c53-8399-3520bd59fee0: Items # Items
