@@ -35,34 +35,7 @@
 				<div class="mt-8 lg:mt-0">
                     {% set blocks = entry.dynamicContent.all() %}
                     {% for blockItem in blocks %}
-                        {% if blockItem.type == "description" %}
-                        <div class="text-base max-w-prose mx-auto lg:max-w-none">
-                            <p class="text-lg text-gray-500">
-                                {{ blockItem.data }}
-                            </p>
-                        </div>
-                        {% endif %}
-                        {% if blockItem.type == "stats" %}
-                            <div class="mt-10">
-                                <dl class="grid grid-cols-2 gap-x-4 gap-y-8">
-                                    {% for stat in blockItem.stats %}
-                                        <div class="border-t-2 border-gray-100 pt-6">
-                                            <dt class="text-base font-medium text-gray-500">
-                                                {{ stat.key }}
-                                            </dt>
-                                            <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
-                                                {{ stat.value }}
-                                            </dd>
-                                        </div>
-                                    {% endfor %}
-                                </dl>
-                                <div class="mt-10">
-                                    <a href="#" class="text-base font-medium text-primary">Reserve your spot
-                                        <span aria-hidden="true">&rarr;</span>
-                                    </a>
-                                </div>
-                            </div>
-                        {% endif %}
+                        {{ blockItem.render }}
                     {% endfor %}
 					<div class="mt-10">
 						<a href="#" class="text-base font-medium text-primary">Reserve your spot
