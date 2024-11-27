@@ -1,4 +1,4 @@
-dateModified: 1732713405
+dateModified: 1732714118
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -18,10 +18,12 @@ meta:
     4ab0679b-8d81-40c7-9ae6-ed83c81f7709: 'Public Schema' # Public Schema
     4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
     7ede29f1-a5b0-4199-a5eb-3ead0a9e434b: 'Primary Navigation' # Primary Navigation
+    64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa: Adventures # Adventures
     65ac9c48-7e34-4d8d-9817-19e9308fa99a: Homepage # Homepage
     9450365f-cc76-4e56-aca0-d4c709fbd40b: Homepage # Homepage
     caef1356-0349-4d6c-a6e7-3cb9cbf4caae: Image # Image
     cef39ee2-c0e2-4c53-8399-3520bd59fee0: Items # Items
+    f6ad7243-5f24-4d89-a935-bfd49c30a7b7: Adventures # Adventures
     fd47350d-f16c-4921-bebe-2ee0b594f7df: Images # Images
 system:
   edition: solo

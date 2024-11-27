@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - f6ad7243-5f24-4d89-a935-bfd49c30a7b7 # Adventures
+handle: adventures
+maxAuthors: 1
+name: Adventures
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4ae55be6-0fdb-40d0-b398-0428c85d6271: # Craft Adventure
+    enabledByDefault: true
+    hasUrls: true
+    template: adventures/_entry.twig
+    uriFormat: 'adventures/{slug}'
+type: channel
