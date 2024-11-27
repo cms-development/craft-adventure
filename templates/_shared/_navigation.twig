@@ -39,36 +39,15 @@
             </button>
           </div>
           <nav class="hidden md:flex space-x-10">
-            <a
-              href="/adventures-listing.html"
-              class="text-base font-medium text-gray-300 hover:text-secondary"
-            >
-              Adventures
-            </a>
-            <a
-              href="#"
-              class="text-base font-medium text-gray-300 hover:text-secondary"
-            >
-              Locations
-            </a>
-            <a
-              href="#"
-              class="text-base font-medium text-gray-300 hover:text-secondary"
-            >
-              FAQs
-            </a>
-            <a
-              href="/content-page.html"
-              class="text-base font-medium text-gray-300 hover:text-secondary"
-            >
-              About
-            </a>
-            <a
-              href="/contact.html"
-              class="text-base font-medium text-gray-300 hover:text-secondary"
-            >
-              Contact
-            </a>
+            {% set navItems = primaryNavigation.items %}
+            {% for item in navItems %}
+              <a
+                href="{{ item.url }}"
+                class="text-base font-medium text-gray-300 hover:text-secondary"
+              >
+                {{ item.title }}
+              </a>
+            {% endfor %}
           </nav>
         </div>
       </div>
