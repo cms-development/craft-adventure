@@ -1,4 +1,4 @@
-dateModified: 1732716121
+dateModified: 1732717599
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -15,17 +15,28 @@ meta:
   __names__:
     0fa2114d-a126-45d6-9a44-398ac1506685: Subtitle # Subtitle
     2c4508b1-08d6-4a8d-8f93-f65a3567bd33: 'Craft Adventure' # Craft Adventure
+    3e3c8669-7e71-4e90-8abc-41878a67915a: '<<<<Data' # <<<<Data
     4ab0679b-8d81-40c7-9ae6-ed83c81f7709: 'Public Schema' # Public Schema
     4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
     7ede29f1-a5b0-4199-a5eb-3ead0a9e434b: 'Primary Navigation' # Primary Navigation
     64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa: Adventures # Adventures
     65ac9c48-7e34-4d8d-9817-19e9308fa99a: Homepage # Homepage
+    92ffea12-c5ef-4211-80f4-334640d64f7a: Simple # Simple
     156f3a3e-e29f-4f97-a114-e891664bfd22: 'Card Thumbnail' # Card Thumbnail
+    19503ef4-21c6-4137-b009-a10589cc1068: Stats # Stats
     9450365f-cc76-4e56-aca0-d4c709fbd40b: Homepage # Homepage
+    16877047-5444-4d8c-b7c6-f4508b5b2b7e: Description # Description
+    ac863cc6-fab1-408a-a142-70ca9f1dadf1: 'Dynamic Content' # Dynamic Content
     caef1356-0349-4d6c-a6e7-3cb9cbf4caae: Image # Image
     cef39ee2-c0e2-4c53-8399-3520bd59fee0: Items # Items
+    e70632e0-75da-4912-b558-c78afa869242: Stats # Stats
     f6ad7243-5f24-4d89-a935-bfd49c30a7b7: Adventures # Adventures
     fd47350d-f16c-4921-bebe-2ee0b594f7df: Images # Images
+plugins:
+  ckeditor:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.0.0
 system:
   edition: solo
   live: true

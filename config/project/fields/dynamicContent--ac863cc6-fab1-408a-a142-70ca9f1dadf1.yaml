@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: dynamicContent
+instructions: null
+name: 'Dynamic Content'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    - 16877047-5444-4d8c-b7c6-f4508b5b2b7e # Description
+    - e70632e0-75da-4912-b558-c78afa869242 # Stats
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

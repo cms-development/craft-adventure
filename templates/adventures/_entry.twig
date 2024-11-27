@@ -33,69 +33,37 @@
 					</div>
 				</div>
 				<div class="mt-8 lg:mt-0">
-					<div class="text-base max-w-prose mx-auto lg:max-w-none">
-						<p class="text-lg text-gray-500">
-							A four-day running adventure in Big Bend National Park, Big Bend State Park, and a few hidden trails just for us. It's the ultimate outdoors Big Bend experience.
-						</p>
-					</div>
-					<div class="mt-10">
-						<dl class="grid grid-cols-2 gap-x-4 gap-y-8">
-							<div class="border-t-2 border-gray-100 pt-6">
-								<dt class="text-base font-medium text-gray-500">Total Miles</dt>
-								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">42</dd>
-							</div>
-
-							<div class="border-t-2 border-gray-100 pt-6">
-								<dt class="text-base font-medium text-gray-500">Days</dt>
-								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">4</dd>
-							</div>
-
-							<div class="border-t-2 border-gray-100 pt-6">
-								<dt class="text-base font-medium text-gray-500">Elevation Gain</dt>
-								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">9200 ft</dd>
-							</div>
-
-							<div class="border-t-2 border-gray-100 pt-6">
-								<dt class="text-base font-medium text-gray-500">Cost</dt>
-								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">$1299</dd>
-							</div>
-						</dl>
-						<div class="mt-10">
-							<a href="#" class="text-base font-medium text-primary">Reserve your spot
-								<span aria-hidden="true">&rarr;</span>
-							</a>
-						</div>
-					</div>
-					<div class="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
-						<p>
-							Sollicitudin tristique eros erat odio sed vitae, consequat
-							                  turpis elementum. Lorem nibh vel, eget pretium arcu vitae.
-							                  Eros eu viverra donec ut volutpat donec laoreet quam urna.
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dignissimos sapiente sint molestiae voluptas non, modi, minus earum facilis voluptates, minima iusto neque enim iure deserunt cumque dolores provident nihil?
-						</p>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						</p>
-						<ul role="list">
-							<li>Quis elit egestas venenatis mattis dignissim.</li>
-							<li>
-								Cras cras lobortis vitae vivamus ultricies facilisis tempus.
-							</li>
-							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
-						</ul>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam velit magnam possimus blanditiis, ratione consectetur repellat aut voluptate commodi provident voluptatum, inventore totam quos similique optio modi dolor deleniti?
-						</p>
-						<h2>Things to Consider</h2>
-						<p>
-							We'll run about 10 miles per day, every day, on rugged southwest Texas trails. We'll run in the morning and afternoon, and we'll run at night. You should be prepared to run technical trails, and we'll have a lot of fun doing it!
-						</p>
-						<p>
-							Your previous experience should be comfortably completing ten mile trail runs with self-sufficient equipment.
-						</p>
-					</div>
+                    {% set blocks = entry.dynamicContent.all() %}
+                    {% for blockItem in blocks %}
+                        {% if blockItem.type == "description" %}
+                        <div class="text-base max-w-prose mx-auto lg:max-w-none">
+                            <p class="text-lg text-gray-500">
+                                {{ blockItem.data }}
+                            </p>
+                        </div>
+                        {% endif %}
+                        {% if blockItem.type == "stats" %}
+                            <div class="mt-10">
+                                <dl class="grid grid-cols-2 gap-x-4 gap-y-8">
+                                    {% for stat in blockItem.stats %}
+                                        <div class="border-t-2 border-gray-100 pt-6">
+                                            <dt class="text-base font-medium text-gray-500">
+                                                {{ stat.key }}
+                                            </dt>
+                                            <dd class="text-3xl font-extrabold tracking-tight text-gray-900">
+                                                {{ stat.value }}
+                                            </dd>
+                                        </div>
+                                    {% endfor %}
+                                </dl>
+                                <div class="mt-10">
+                                    <a href="#" class="text-base font-medium text-primary">Reserve your spot
+                                        <span aria-hidden="true">&rarr;</span>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
 					<div class="mt-10">
 						<a href="#" class="text-base font-medium text-primary">Reserve your spot
 							<span aria-hidden="true">&rarr;</span>
