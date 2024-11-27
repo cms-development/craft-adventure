@@ -1,0 +1,204 @@
+{% extends '_shared/_layout.twig' %}
+
+{% block main %}
+<main>
+	<div class="bg-white overflow-hidden">
+		<div class="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+			<div class="hidden lg:block bg-secondary absolute top-0 bottom-0 left-3/4 w-screen"></div>
+			<div class="mx-auto text-base max-w-prose lg:grid lg:grid-cols-2 lg:gap-8 lg:max-w-none">
+				<div>
+					<h1 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+						{{ entry.title }}
+					</h1>
+				</div>
+			</div>
+			<div class="mt-8 lg:grid lg:grid-cols-2 lg:gap-8">
+				<div class="relative lg:row-start-1 lg:col-start-2">
+					<div class="relative text-base mx-auto max-w-prose lg:max-w-none">
+						<figure class="mb-8">
+							<div class="aspect-w-12 aspect-h-7 lg:aspect-none">
+								<img class="shadow-lg object-cover object-center lg:rotate-1 border-gray-200 border-8" src="/images/massimo-sartirana-W_mBu-aC2m8-unsplash.jpg" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376"/>
+							</div>
+						</figure>
+						<figure class="mb-8">
+							<div class="aspect-w-12 aspect-h-7 lg:aspect-none">
+								<img class="shadow-lg object-cover object-center lg:rotate-2 border-gray-200 border-8" src="/images/massimo-sartirana-W_mBu-aC2m8-unsplash.jpg" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376"/>
+							</div>
+						</figure>
+						<figure class="mb-8">
+							<div class="aspect-w-12 aspect-h-7 lg:aspect-none">
+								<img class="shadow-lg object-cover object-center lg:rotate-3 border-gray-200 border-8" src="/images/massimo-sartirana-W_mBu-aC2m8-unsplash.jpg" alt="Whitney leaning against a railing on a downtown street" width="1184" height="1376"/>
+							</div>
+						</figure>
+					</div>
+				</div>
+				<div class="mt-8 lg:mt-0">
+					<div class="text-base max-w-prose mx-auto lg:max-w-none">
+						<p class="text-lg text-gray-500">
+							A four-day running adventure in Big Bend National Park, Big Bend State Park, and a few hidden trails just for us. It's the ultimate outdoors Big Bend experience.
+						</p>
+					</div>
+					<div class="mt-10">
+						<dl class="grid grid-cols-2 gap-x-4 gap-y-8">
+							<div class="border-t-2 border-gray-100 pt-6">
+								<dt class="text-base font-medium text-gray-500">Total Miles</dt>
+								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">42</dd>
+							</div>
+
+							<div class="border-t-2 border-gray-100 pt-6">
+								<dt class="text-base font-medium text-gray-500">Days</dt>
+								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">4</dd>
+							</div>
+
+							<div class="border-t-2 border-gray-100 pt-6">
+								<dt class="text-base font-medium text-gray-500">Elevation Gain</dt>
+								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">9200 ft</dd>
+							</div>
+
+							<div class="border-t-2 border-gray-100 pt-6">
+								<dt class="text-base font-medium text-gray-500">Cost</dt>
+								<dd class="text-3xl font-extrabold tracking-tight text-gray-900">$1299</dd>
+							</div>
+						</dl>
+						<div class="mt-10">
+							<a href="#" class="text-base font-medium text-primary">Reserve your spot
+								<span aria-hidden="true">&rarr;</span>
+							</a>
+						</div>
+					</div>
+					<div class="mt-5 prose prose-indigo text-gray-500 mx-auto lg:max-w-none lg:row-start-1 lg:col-start-1">
+						<p>
+							Sollicitudin tristique eros erat odio sed vitae, consequat
+							                  turpis elementum. Lorem nibh vel, eget pretium arcu vitae.
+							                  Eros eu viverra donec ut volutpat donec laoreet quam urna.
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dignissimos sapiente sint molestiae voluptas non, modi, minus earum facilis voluptates, minima iusto neque enim iure deserunt cumque dolores provident nihil?
+						</p>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						</p>
+						<ul role="list">
+							<li>Quis elit egestas venenatis mattis dignissim.</li>
+							<li>
+								Cras cras lobortis vitae vivamus ultricies facilisis tempus.
+							</li>
+							<li>Lorem ipsum dolor sit amet consectetur adipisicing elit.</li>
+						</ul>
+						<p>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis ipsam velit magnam possimus blanditiis, ratione consectetur repellat aut voluptate commodi provident voluptatum, inventore totam quos similique optio modi dolor deleniti?
+						</p>
+						<h2>Things to Consider</h2>
+						<p>
+							We'll run about 10 miles per day, every day, on rugged southwest Texas trails. We'll run in the morning and afternoon, and we'll run at night. You should be prepared to run technical trails, and we'll have a lot of fun doing it!
+						</p>
+						<p>
+							Your previous experience should be comfortably completing ten mile trail runs with self-sufficient equipment.
+						</p>
+					</div>
+					<div class="mt-10">
+						<a href="#" class="text-base font-medium text-primary">Reserve your spot
+							<span aria-hidden="true">&rarr;</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section class="bg-white">
+		<div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
+			<h2 class="sr-only">Trail Running Locations</h2>
+			<div class="pb-5">
+				<h2 class="text-4xl leading-6 font-extrabold text-primary my-6">
+					Trail Running Locations
+				</h2>
+			</div>
+			<div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols- xl:grid-cols-4 xl:gap-x-6">
+				<ul>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+				</ul>
+				<ul>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+				</ul>
+				<ul>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+				</ul>
+				<ul>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+					<li class="pb-2">
+						<a class="hover:text-secondary text-black" href="">Adventure Vacation in Big Bend</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+	<section class="overflow-hidden md:py-20 lg:py-20 bg-white">
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="relative">
+				<blockquote class="">
+					<div class="max-w-3xl mx-auto text-center text-4xl leading-9 font-bold text-secondary">
+						<p>
+							&ldquo;The best way to spend my 5 days of annual vacation time
+							                  away from the cubicle!&rdquo;
+						</p>
+					</div>
+					<footer class="mt-8">
+						<div class="md:flex md:items-center md:justify-center">
+							<div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
+								<div class="text-base font-medium text-gray-900">
+									Milton Waddams &nbsp;
+								</div>
+								<div class="text-base font-medium text-gray-500">
+									Austin, TX
+								</div>
+							</div>
+						</div>
+					</footer>
+				</blockquote>
+			</div>
+		</div>
+	</section>
+</main>
+{% endblock %}
