@@ -29,7 +29,8 @@
           </div>
         </nav>
         <p class="mt-8 text-center text-base text-gray-400">
-          &copy; 2022 TrailQuests
+          {% set currentYear = "now"|date("Y") %}
+          &copy; {{ currentYear }} Trail Adventures. All rights reserved.
         </p>
       </div>
     </footer>
