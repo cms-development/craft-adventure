@@ -1,4 +1,4 @@
-dateModified: 1732717599
+dateModified: 1733317860
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -24,6 +24,7 @@ meta:
     92ffea12-c5ef-4211-80f4-334640d64f7a: Simple # Simple
     156f3a3e-e29f-4f97-a114-e891664bfd22: 'Card Thumbnail' # Card Thumbnail
     19503ef4-21c6-4137-b009-a10589cc1068: Stats # Stats
+    019761cc-451c-462b-ba41-2f6a73d32e45: Referentie # Referentie
     9450365f-cc76-4e56-aca0-d4c709fbd40b: Homepage # Homepage
     16877047-5444-4d8c-b7c6-f4508b5b2b7e: Description # Description
     ac863cc6-fab1-408a-a142-70ca9f1dadf1: 'Dynamic Content' # Dynamic Content
@@ -37,6 +38,17 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.0.0
+  mollie-payments:
+    edition: standard
+    enabled: true
+    licenseKey: YYSB40KXYGTQ8UYH5H1PUQ35
+    schemaVersion: 5.0.0
+    settings:
+      apiKey: test_MC7tbSjEvvqMCghCC5zMKjsDkAjAxc
+      manageSubscriptionEmailPath: ''
+      manageSubscriptionEmailSubject: ''
+      manageSubscriptionRoute: ''
+      pluginLabel: Payments
 system:
   edition: solo
   live: true

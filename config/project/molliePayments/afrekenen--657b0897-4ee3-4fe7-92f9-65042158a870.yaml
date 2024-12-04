@@ -1,0 +1,30 @@
+currency: EUR
+descriptionFormat: ''
+fieldLayouts:
+  588047c4-41cf-4610-97db-cd20d20a540d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-12-04T12:46:28+00:00'
+            elementCondition: null
+            fieldUid: 019761cc-451c-462b-ba41-2f6a73d32e45 # Referentie
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2f954d49-1e2c-40dc-bf43-94cc2d356c38
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 316ddbc1-0109-477b-b42f-4bb53534a90d
+        userCondition: null
+handle: afrekenen
+title: Afrekenen
+type: payment
