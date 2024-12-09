@@ -1,0 +1,66 @@
+.ugly-css {
+    form {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 1em;
+        background: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        margin-bottom: .5em;
+        color: #333333;
+        display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        border: 1px solid #CCCCCC;
+        padding: .5em;
+        font-size: 1em;
+        width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 1em;
+        border-radius: 3px;
+    }
+
+    button {
+        margin: 1rem 0;
+        padding: 0.7em;
+        color: #fff;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        padding: .5em 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    a {
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .participant-row {
+        display: flex;
+    }
+}

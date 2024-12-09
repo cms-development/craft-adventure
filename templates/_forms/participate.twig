@@ -1,0 +1,112 @@
+{% import "_forms/macros/forms" as f %}
+
+
+{% set entry = entry %}
+
+{# if not logged in, redirect to login page #}
+{% if not currentUser %}
+  {% redirect 'login' %}
+{% else %}
+<form class="ugly-css" method="post" accept-charset="UTF-8">
+  {{ csrfInput() }}
+  {{ actionInput('entries/save-entry') }}
+  {{ redirectInput('{url}') }}
+
+  {{ hiddenInput('entryId', entry.id) }}
+  {{ hiddenInput('enabled', true) }}
+
+  <label for="participants">Participants</label>
+  {# participants is a users field #}
+  {% set userHasParticipated = false %}
+  <div id="participants">
+    {% for block in entry.participants.all() %}
+      {% set p_user = block.p_user.one() %}
+
+      <div class="participant-row">
+        {{ hiddenInput('fields[participants][sortOrder][]', block.id) }}
+        {% namespace "fields[participants][entries][#{block.id}]" %}
+            {{ hiddenInput('type', block.type) }}
+
+            {# Velden van het blok: #}
+            {{ hiddenInput('fields[p_user][]', p_user.id) }}
+            {{ hiddenInput('fields[p_status]', block.p_status) }}
+        {% endnamespace %}
+        <div>
+          <label>Deelnemer</label>
+          <select disabled>
+              {% for user in craft.users.all() %}
+                  <option disabled value="{{ user.id }}" {% if p_user.id == user.id %}selected{% endif %}>
+                      {{ user.username }}
+                  </option>
+              {% endfor %}
+          </select>
+        </div>
+        <div>
+          <label>Status</label>
+          <select disabled>
+              <option value="wachtend" {% if block.p_status == 'wachtend' %}selected{% endif %}>Wachtend</option>
+              <option value="bevestigd" {% if block.p_status == 'bevestigd' %}selected{% endif %}>Bevestigd</option>
+              <option value="betaald" {% if block.p_status == 'betaald' %}selected{% endif %}>Betaald</option>
+          </select>
+        </div>
+        <div>
+          {% if p_user.id == currentUser.id %}
+            {% set userHasParticipated = true %}
+            {% if block.p_status == 'pending' %}
+              <a href="#todo">Remove</a>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+    {% if not userHasParticipated %}
+      <button type="button" id="add-participant">Neem deel</button>
+    {% endif %}
+  {{ f.errorList(entry.getErrors('participants')) }}
+  
+ 
+
+
+  <button type="submit">Publish</button>
+</form>
+{% endif %}
+
+<script>
+        document.getElementById('add-participant').addEventListener('click', function() {
+        const container = document.getElementById('participants');
+        const newBlockId = 'new:' + (container.children.length); // Unieke ID voor nieuwe blokken
+        const blockHtml = `
+            <div class="participant-row">
+                <input type="hidden" name="fields[participants][sortOrder][]" value="${newBlockId}">
+                {% namespace "fields[participants][entries][${newBlockId}]" %}
+                    {{ hiddenInput('type', "participants") }}
+                    {{ hiddenInput('fields[p_user][]', currentUser.id) }}
+                    {{ hiddenInput('fields[p_status]', 'pending') }}
+                {% endnamespace %}
+                <div> 
+                  <select disabled>
+                      {% for user in craft.users.all() %}
+                          <option 
+                            {% if user.id == currentUser.id %}
+                              selected
+                            {% endif %}
+                            value="{{ user.id }}">
+                              {{ user.username }}
+                          </option>
+                      {% endfor %}
+                  </select>
+                </div>
+                <div>
+                  <select disabled>
+                      <option value="wachtend">Wachtend</option>
+                  </select>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', blockHtml);
+        // remove button
+        document.querySelector('#add-participant').style.display = 'none';
+    });
+</script>

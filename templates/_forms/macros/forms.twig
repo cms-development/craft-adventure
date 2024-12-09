@@ -1,0 +1,16 @@
+{# error macro #}
+{% macro errorList(errors) %}
+  {% if errors %}
+    {{ ul(errors, {class: 'errors'}) }}
+  {% endif %}
+{% endmacro %}
+
+
+{# select macro #}
+{% macro select(name, options, selectedValue = null, attributes = {}) %}
+  <select name="{{ name }}" {% for key, value in attributes %} {{ key }}="{{ value }}" {% endfor %}>
+    {% for value, label in options %}
+      <option value="{{ value }}" {% if value == selectedValue %}selected{% endif %}>{{ label }}</option>
+    {% endfor %}
+  </select>
+{% endmacro %}

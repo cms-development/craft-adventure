@@ -1,0 +1,8 @@
+description: null
+handle: team
+name: Team
+permissions:
+  - 'saveentries:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures
+  - 'savepeerentries:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures
+  - 'viewentries:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures
+  - 'viewpeerentries:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures

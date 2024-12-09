@@ -1,0 +1,44 @@
+columnSuffix: null
+handle: p_status
+instructions: null
+name: Status
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Pending
+        -
+          - value
+          - pending
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Confirmed
+        -
+          - value
+          - confirmed
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Paid
+        -
+          - value
+          - paid
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

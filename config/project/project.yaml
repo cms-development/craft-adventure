@@ -1,4 +1,4 @@
-dateModified: 1733317860
+dateModified: 1733666174
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -19,15 +19,20 @@ meta:
     4ab0679b-8d81-40c7-9ae6-ed83c81f7709: 'Public Schema' # Public Schema
     4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
     7ede29f1-a5b0-4199-a5eb-3ead0a9e434b: 'Primary Navigation' # Primary Navigation
+    8ac5cf25-30f0-49a4-af8c-054c85dc9796: Status # Status
     64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa: Adventures # Adventures
     65ac9c48-7e34-4d8d-9817-19e9308fa99a: Homepage # Homepage
+    91e324a2-e188-4cf8-9855-32ab0c473307: Participants # Participants
     92ffea12-c5ef-4211-80f4-334640d64f7a: Simple # Simple
     156f3a3e-e29f-4f97-a114-e891664bfd22: 'Card Thumbnail' # Card Thumbnail
+    6705ef7e-3731-42cd-ac26-4270d49d2c3b: User # User
     19503ef4-21c6-4137-b009-a10589cc1068: Stats # Stats
     019761cc-451c-462b-ba41-2f6a73d32e45: Referentie # Referentie
     9450365f-cc76-4e56-aca0-d4c709fbd40b: Homepage # Homepage
     16877047-5444-4d8c-b7c6-f4508b5b2b7e: Description # Description
     ac863cc6-fab1-408a-a142-70ca9f1dadf1: 'Dynamic Content' # Dynamic Content
+    acbb4ff0-8cce-4db3-86ba-4133bc11803b: Participants # Participants
+    c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     caef1356-0349-4d6c-a6e7-3cb9cbf4caae: Image # Image
     cef39ee2-c0e2-4c53-8399-3520bd59fee0: Items # Items
     e70632e0-75da-4912-b558-c78afa869242: Stats # Stats
@@ -50,15 +55,8 @@ plugins:
       manageSubscriptionRoute: ''
       pluginLabel: Payments
 system:
-  edition: solo
+  edition: team
   live: true
   name: 'Craft Adventure'
   schemaVersion: 5.5.0.0
   timeZone: America/Los_Angeles
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  require2fa: false
-  requireEmailVerification: true
