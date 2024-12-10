@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 1a5a3e2a-c42c-49db-81e9-94deb3ed0aa8 # Bills
+handle: bills
+maxAuthors: 1
+name: Bills
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4ae55be6-0fdb-40d0-b398-0428c85d6271: # Craft Adventure
+    enabledByDefault: false
+    hasUrls: true
+    template: null
+    uriFormat: 'rekeningen/{slug}'
+type: channel

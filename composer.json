@@ -33,5 +33,10 @@
       "url": "https://composer.craftcms.com",
       "canonical": false
     }
-  ]
+  ],
+  "autoload": {
+    "psr-4": {
+      "modules\\rugzak\\": "modules/rugzak/src/"
+    }
+  }
 }

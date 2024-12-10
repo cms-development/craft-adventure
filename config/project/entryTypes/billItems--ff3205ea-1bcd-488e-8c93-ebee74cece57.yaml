@@ -1,0 +1,53 @@
+color: null
+fieldLayouts:
+  53a54c5d-a11e-43df-9783-dfb7638c0d89:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-12-10T10:15:20+00:00'
+            elementCondition: null
+            fieldUid: f57bae4b-b9ee-49c1-8e4a-8239be75107b # Adventure
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 26a6f020-5af9-483b-9788-fd3f6007924e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-10T10:15:20+00:00'
+            elementCondition: null
+            fieldUid: 945ae902-ab96-460c-b14a-58bb63df7a59 # Price
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1c74f634-888c-4925-8790-2f66e2606607
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ff778969-01cf-46b7-93a6-03b4bf17e57d
+        userCondition: null
+handle: billItems
+hasTitleField: false
+icon: ''
+name: 'Bill Items'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'Item: {adventure.title}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

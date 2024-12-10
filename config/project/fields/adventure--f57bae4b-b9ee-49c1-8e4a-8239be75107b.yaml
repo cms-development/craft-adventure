@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: adventure
+instructions: null
+name: Adventure
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  selectionLabel: 'Link an adventure'
+  showCardsInGrid: false
+  showSiteMenu: false
+  sources:
+    - 'section:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

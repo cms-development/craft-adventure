@@ -9,4 +9,15 @@
  * https://craftcms.com/docs/4.x/routing.html
  */
 
-return [];
+return [
+    [
+        'pattern' => 'rugzak/add-item',
+        'route' => 'rugzak-module/bill/add-item',
+        'verb' => ['POST', 'GET'],
+    ],
+    [
+        'pattern' => 'rugzak/remove-item/<id:\d+>',
+        'route' => 'rugzak-module/bill/remove-item',
+        'verb' => 'POST',
+    ],
+];

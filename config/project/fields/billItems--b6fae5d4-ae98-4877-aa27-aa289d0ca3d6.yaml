@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: billItems
+instructions: null
+name: 'Bill Items'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    - ff3205ea-1bcd-488e-8c93-ebee74cece57 # Bill Items
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
