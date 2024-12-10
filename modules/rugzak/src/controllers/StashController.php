@@ -34,8 +34,7 @@ class StashController extends Controller
         ]);
     }
 
-    public function actionAddItem()
-    {
+    public function actionAddItem() {
         // get the goodie id from the request
         $goodieId = Craft::$app->getRequest()->getRequiredParam('goodie');
         
