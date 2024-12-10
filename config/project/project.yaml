@@ -1,4 +1,52 @@
-dateModified: 1733835662
+dateModified: 1733839892
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      key: singles
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      key: 'section:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:496b0e75-90ef-4e0a-a73c-7d9c71277786' # Bills
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\TypeConditionRule
+            operator: in
+            uid: 46d7406d-c64c-4ab7-9961-0b6bb526e408
+            values:
+              - ff3205ea-1bcd-488e-8c93-ebee74cece57 # Bill Items
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - id
+        - asc
+      defaultViewMode: ''
+      key: 'custom:29fc14a8-f269-4fa1-a04f-d2953560d4e7'
+      label: ''
+      tableAttributes: '-'
+      type: custom
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'

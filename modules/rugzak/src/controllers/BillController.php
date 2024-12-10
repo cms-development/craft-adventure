@@ -38,9 +38,12 @@ class BillController extends Controller
         // find existing open bill, if not found create a new one
         $entry = $this->findOrCreateBill($userId);
 
-        // update title
-        $entry->title = 'Openstaande test';
+        // // update title
+        // $entry->title = 'Openstaande pest';
 
+        // // save the entry
+        // Craft::$app->getElements()->saveElement($entry);
+        // dd('test');
 
         // get the items from the request
         // $items = Craft::$app->getRequest()->getBodyParam('items');
@@ -52,37 +55,30 @@ class BillController extends Controller
         ];
 
         // Get the matrix field data
-        $billItemsField = $entry->getFieldValue('bill_items');
-        $billItems = $billItemsField->all();
-        // $sortOrder = [];
-        // foreach ($billItems as $billItem) {
-        //     $sortOrder[] = $billItem->id;
-        // }
+        $itemQuery = $entry->getFieldValue('bill_items');
+        $existing_items = $itemQuery->all();
 
-        // // Maak een nieuw MatrixBlock aan
-        // $newMatrixBlock = [
-        //     'id' => 'new:1',  // Temporarily unique identifier for the new block
-        //     'type' => 'bill_items',  // Ensure this matches the block type handle
-        //     'sortOrder' => count($billItems) + 1,  // Append to the end of the list
-        //     'fields' => [
-        //         'adventure' => [23],  // Adventure related to the bill (replace with dynamic value)
-        //         'price' => 100  // Price field (replace with dynamic value)
-        //     ]
-        // ];
+        $bill_items = [];
+        foreach ($existing_items as $item) {
+            $sortOrder[] = $item->id;
+            $entries[$item->id] = [
+                'type' => 'bill_items',
+                'fields' => [
+                    'adventure' => [$item->adventure->one() ? $item->adventure->one()->id : null],
+                    'price' => $item->price->getAmount() 
+                ]
+            ];
+        }
+        $bill_items['sortOrder'] = $sortOrder;
+        $bill_items['entries'] = $entries;
 
-        
-        // $sortOrder = array_merge($sortOrder, [$newMatrixBlock['id']]);
-        // $entries = $entry->bill_items->all();
 
-        // // Voeg de nieuwe MatrixBlock toe aan de entries
-        // $entries['new:1'] = $newMatrixBlock['fields'];
+        // $entry->title = "Openstaande rekening hesp";
+        // $entry->setFieldValue('bill_items', $bill_items);
+        // Craft::$app->getElements()->saveElement($entry);
 
-        // // Sla de entry op met de nieuwe gegevens
-        // $entry->setFieldValue('bill_items', $entries);
-        // $entry->setFieldValue('bill_items[sortOrder]', $sortOrder);  // Voeg sortOrder toe
-
-        
         dd($entry);
+        
 
 
         return $this->asJson(['message' => 'Item toegevoegd!']);
