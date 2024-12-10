@@ -1,0 +1,27 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  - 3e3f9254-b8c6-426f-a749-87cd06373172 # Goodies_entrytype
+handle: goodies_section
+maxAuthors: 1
+name: Goodies
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4ae55be6-0fdb-40d0-b398-0428c85d6271: # Craft Adventure
+    enabledByDefault: true
+    hasUrls: true
+    template: goodies/_entry.twig
+    uriFormat: 'goodies/{slug}'
+type: channel

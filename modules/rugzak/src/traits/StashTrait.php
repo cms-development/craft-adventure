@@ -6,7 +6,7 @@ use Craft;
 use craft\records\EntryType;
 use craft\records\Section;
 
-trait BillTrait
+trait StashTrait
 {
     public function getSectionByHandle($sectionHandle)
     {
@@ -47,19 +47,5 @@ trait BillTrait
         }
 
         return $entryType;
-    }
-
-    public function calculateTotal($items)
-    {
-        $total = 0;
-        foreach ($items as $item) {
-            $total += $item['price'] * $item['quantity'];
-        }
-        return $total;
-    }
-
-    public function applyDiscount($total, $discount)
-    {
-        return $total - ($total * ($discount / 100));
     }
 }

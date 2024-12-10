@@ -11,13 +11,13 @@
 
 return [
     [
-        'pattern' => 'rugzak/add-item',
-        'route' => 'rugzak-module/bill/add-item',
+        'pattern' => 'rugzak/add-item/', // <goodie:\d+> is a regex pattern that matches a number
+        'route' => 'rugzak-module/stash/add-item',
         'verb' => ['POST', 'GET'],
     ],
     [
         'pattern' => 'rugzak/remove-item/<id:\d+>',
-        'route' => 'rugzak-module/bill/remove-item',
+        'route' => 'rugzak-module/stash/remove-item',
         'verb' => 'POST',
     ],
 ];

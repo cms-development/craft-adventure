@@ -1,0 +1,22 @@
+columnSuffix: null
+handle: goodie
+instructions: null
+name: Goodie
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  selectionLabel: 'Add a goodie'
+  showCardsInGrid: false
+  showSiteMenu: false
+  sources:
+    - 'section:a5f2bd87-c84f-41d1-a25e-a7d44786e1bd' # Goodies
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Entries

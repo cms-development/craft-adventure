@@ -1,0 +1,83 @@
+color: null
+fieldLayouts:
+  24c242b6-7ae2-4de6-aeba-500c61ce86bb:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-10T20:17:55+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 7448a685-5cb9-4051-8349-e88643ba7f26
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-10T20:17:55+00:00'
+            elementCondition: null
+            fieldUid: abdf7c49-0c4f-4a8d-b84f-c56f23facbfd # Goodie
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7991fa5a-a77f-4a43-b31f-ed66d972bda7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-10T20:17:55+00:00'
+            elementCondition: null
+            fieldUid: 945ae902-ab96-460c-b14a-58bb63df7a59 # Price
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 40012805-f28b-4de6-adb0-eb0e26fd7f9d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 3e6e975b-8ad3-4739-a767-cbbd07fd55f0
+        userCondition: null
+handle: stash_items
+hasTitleField: true
+icon: ''
+name: 'Stash Items'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

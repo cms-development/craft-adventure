@@ -1,0 +1,70 @@
+{% extends '_shared/_layout.twig' %}
+{% set goodies = craft.entries.section('goodies_section').all() %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h1>Goodies</h1>
+
+            <div class="row">
+            {% for goodie in goodies %}
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ goodie.title }}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">
+                                €
+                                {{ goodie.price.amount / 100 }}
+                            </h6>
+                            <p class="card-text">{{ goodie.description }}</p>
+                            <a href="/rugzak/add-item?goodie={{ goodie.id }}" class="btn btn-primary">
+                                Steek in rugzak
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            <hr>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2>Rugzak</h2>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Goodie</th>
+                                <th>Prijs</th>
+                                <th>Aantal</th>
+                                <th>Subtotaal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {# {% for item in cart.items %}
+                                <tr>
+                                    <td>{{ item.goodie.title }}</td>
+                                    <td>€ {{ item.goodie.price.amount / 100 }}</td>
+                                    <td>{{ item.quantity }}</td>
+                                    <td>€ {{ item.total }}</td>
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="3">Totaal</td>
+                                <td>€ {{ cart.total }}</td>
+                            </tr> #}
+                        </tbody>
+                    </table>
+                    <a href="/rugzak/checkout" class="btn btn-danger">Afrekenen</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
