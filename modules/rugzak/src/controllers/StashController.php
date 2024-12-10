@@ -92,8 +92,7 @@ class StashController extends Controller
         return $entry;
     }
 
-    private function createNewStash($userId)
-    {
+    private function createNewStash($userId) {
         $section = $this->getSectionByHandle('stash_section');
         $entryType = $this->getEntryType($section);
 
@@ -116,17 +115,14 @@ class StashController extends Controller
     **/    
     private function createNewStashItem($entry, $goodieId)
     {
-        
         $userId = Craft::$app->getUser()->getIdentity()->getId();
         $itemFieldId = $entry->getFieldValue('stash_items')->one()->fieldId;
 
+        // get the goodie entry for some basic data
         $goodie = Entry::find()
             ->section('goodies_section')
             ->id($goodieId)
             ->one();
-
-        // dd($itemFieldId);
-
 
         // now we can add the new item to the array
         // for this we need to create a new item and save it
@@ -149,5 +145,4 @@ class StashController extends Controller
         
         return $newItem;
     }
-
 }
