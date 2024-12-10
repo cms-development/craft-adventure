@@ -38,28 +38,23 @@ class BillController extends Controller
         // find existing open bill, if not found create a new one
         $entry = $this->findOrCreateBill($userId);
 
-        // // update title
-        // $entry->title = 'Openstaande pest';
-
-        // // save the entry
-        // Craft::$app->getElements()->saveElement($entry);
-        // dd('test');
-
-        // get the items from the request
-        // $items = Craft::$app->getRequest()->getBodyParam('items');
-
         // as example some hardcoded items
-        $items = [
-            'id' => 23,
-            'price' => 10,
+        $adventure = [
+            'adventure' => [17],
+            'price' => "1500",
         ];
 
         // Get the matrix field data
         $itemQuery = $entry->getFieldValue('bill_items');
+        $itemFieldId = $itemQuery->fieldId;
         $existing_items = $itemQuery->all();
+        
 
         $bill_items = [];
+        $sortOrder = [];
+        $entries = [];
         foreach ($existing_items as $item) {
+            // dd($item);
             $sortOrder[] = $item->id;
             $entries[$item->id] = [
                 'type' => 'bill_items',
@@ -72,12 +67,32 @@ class BillController extends Controller
         $bill_items['sortOrder'] = $sortOrder;
         $bill_items['entries'] = $entries;
 
+        // now add the new items
+        // create new entry
+        $newItem = new Entry();
+        $newItem->fieldId = $itemFieldId;
+        $newItem->typeId = 6;
+        $newItem->authorId = $userId;
+        $newItem->ownerId = $entry->id;
+        $newItem->enabled = true;
+        $newItem->title = 'Test item' . time();
+        $newItem->slug = 'nieuw-item-' . time();
+        $newItem->setFieldValue('adventure', [17]); // Zorg dat 'adventure' overeenkomt met veldnaam
+        $newItem->setFieldValue('price', 1500); // Zorg dat 'price' overeenkomt met veldnaam
+        $newItem->siteId = Craft::$app->sites->getCurrentSite()->id; // Correcte site instellen
+         
+        Craft::$app->getElements()->saveElement($newItem);
 
-        // $entry->title = "Openstaande rekening hesp";
-        // $entry->setFieldValue('bill_items', $bill_items);
-        // Craft::$app->getElements()->saveElement($entry);
+        $bill_items['sortOrder'][] = $newItem->id;
+        $bill_items['entries'][$newItem->id] = [
+            'type' => 'bill_items',
+            'fields' => $adventure
+        ];
 
-        dd($entry);
+        $entry->title = "[OPENSTAAND] Rekening voor " . Craft::$app->getUser()->getIdentity()->username . " (" . count($bill_items['sortOrder']) . " items)";
+        $entry->bill_items = $bill_items;
+        Craft::$app->getElements()->saveElement($entry);
+
         
 
 
