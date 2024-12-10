@@ -1,5 +1,14 @@
 {% extends '_shared/_layout.twig' %}
 {% set goodies = craft.entries.section('goodies_section').all() %}
+{% set stash = craft.entries()
+    .section('stash_section')
+    .stash_status('open')
+    .relatedTo({
+        targetElement: currentUser.id,
+        field: 'stash_user'
+    })
+    .orderBy('dateCreated DESC')
+    .one() %}
 
 {% block css %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -46,18 +55,18 @@
                         </thead>
                         <tbody>
 
-                            {# {% for item in cart.items %}
+                            {% for item in stash.stash_items %}
                                 <tr>
-                                    <td>{{ item.goodie.title }}</td>
-                                    <td>€ {{ item.goodie.price.amount / 100 }}</td>
-                                    <td>{{ item.quantity }}</td>
-                                    <td>€ {{ item.total }}</td>
+                                    <td>{{ item.title }}</td>
+                                    <td>€ {{ item.price.amount / 100 }}</td>
+                                    <td>1</td>
+                                    <td>€ {{ item.price.amount / 100 }}</td>
                                 </tr>
                             {% endfor %}
                             <tr>
                                 <td colspan="3">Totaal</td>
-                                <td>€ {{ cart.total }}</td>
-                            </tr> #}
+                                {# <td>€ {{ cart.total }}</td> #}
+                            </tr>
                         </tbody>
                     </table>
                     <a href="/rugzak/checkout" class="btn btn-danger">Afrekenen</a>
