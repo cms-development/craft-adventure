@@ -10,11 +10,11 @@ use yii\filters\AccessControl;
 
 class StashController extends Controller
 {
-    use StashTrait;
+    use StashTrait; // some helper methods
 
     /**
      * This method is called before the action methods are run.
-     * Bt adding the AccessControl behavior, we can ensure that only logged in users can access the methods in this controller.
+     * By adding the AccessControl behavior, we can ensure that only logged in users can access the methods in this controller.
      */
     public function behaviors(): array
     {
@@ -108,12 +108,7 @@ class StashController extends Controller
         return $entry;
     }
 
-    /**
-     * Create a new stash item
-     * 
-    **/    
-    private function createNewStashItem($entry, $goodieId)
-    {
+    private function createNewStashItem($entry, $goodieId) {
         $userId = Craft::$app->getUser()->getIdentity()->getId();
         $itemFieldId = $entry->getFieldValue('stash_items')->one()->fieldId;
 
