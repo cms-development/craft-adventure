@@ -11,6 +11,7 @@ class WinkelmandjeModule extends Module implements BootstrapInterface
     {
         parent::init();
         
+        // dd("Yay, the Winkelmandje module is loaded!");
     }
 
     public function bootstrap($app)
