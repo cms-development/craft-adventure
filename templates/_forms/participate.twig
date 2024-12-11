@@ -5,7 +5,7 @@
 
 {# if not logged in, redirect to login page #}
 {% if not currentUser %}
-  {% redirect 'login' %}
+  {% redirect '/authentication/login' %}
 {% else %}
 <form class="ugly-css" method="post" accept-charset="UTF-8">
   {{ csrfInput() }}
