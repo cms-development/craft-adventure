@@ -37,7 +37,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "modules\\rugzak\\": "modules/rugzak/src/"
+      "modules\\rugzak\\": "modules/rugzak/src/",
+      "modules\\winkelmandje\\": "modules/winkelmandje/src/"
     }
   }
 }
