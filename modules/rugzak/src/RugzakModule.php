@@ -2,13 +2,9 @@
 
 namespace modules\rugzak;
 
-use Craft;
-use craft\elements\Entry;
 use yii\base\BootstrapInterface;
 use yii\base\Module;
 use modules\rugzak\events\PaymentUpdate;
-use studioespresso\molliepayments\elements\Payment;
-use studioespresso\molliepayments\services\Transaction;
 
 class RugzakModule extends Module implements BootstrapInterface
 {

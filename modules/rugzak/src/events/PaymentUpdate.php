@@ -7,10 +7,9 @@ use craft\elements\Entry;
 use studioespresso\molliepayments\events\TransactionUpdateEvent;
 use studioespresso\molliepayments\events\PaymentUpdateEvent;
 use studioespresso\molliepayments\MolliePayments;
-use studioespresso\molliepayments\services\Payment;
-use studioespresso\molliepayments\services\Transaction;
-use Yii;
 use yii\base\Event;
+use studioespresso\molliepayments\elements\Payment;
+use studioespresso\molliepayments\services\Transaction;
 
 /**
  * PaymentUpdate class.
@@ -44,25 +43,25 @@ class PaymentUpdate {
                 if($event->status == "paid") {
                     $transactionId = $event->transaction['uid'];
                     
-                    // $transactionId = $event->transaction['uid'];
-                    $uid = "b35c3124-c8b2-473d-9ab2-bc05ada6bf5d";
-                    $transaction = Entry::find()
-                        ->section('mollie-payments')
-                        // ->uid($uid)
-                        ->one();
+                    // // $transactionId = $event->transaction['uid'];
+                    // $uid = "b35c3124-c8b2-473d-9ab2-bc05ada6bf5d";
+                    // $transaction = Entry::find()
+                    //     ->section('mollie-payments')
+                    //     // ->uid($uid)
+                    //     ->one();
 
-                    $payment = Payment::find()
-                        ->uid($uid)
-                        ->one();
-                    $stashId = $payment->stash;
+                    // $payment = Payment::find()
+                    //     ->uid($uid)
+                    //     ->one();
+                    // $stashId = $payment->stash;
 
-                    $stash = Entry::find()
-                        ->section('stash_section')
-                        ->uid($stashId)
-                        ->one();
+                    // $stash = Entry::find()
+                    //     ->section('stash_section')
+                    //     ->uid($stashId)
+                    //     ->one();
 
-                    $stash->stash_status = "paid";
-                    Craft::$app->elements->saveElement($stash);
+                    // $stash->stash_status = "paid";
+                    // Craft::$app->elements->saveElement($stash);
                 }
 
             }
