@@ -2,6 +2,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "require": {
+    "bedezign/yii2-audit": "^1.0",
     "craftcms/ckeditor": "4.4.0",
     "craftcms/cms": "^5.0.0",
     "studioespresso/craft-mollie-payments": "5.1.0",

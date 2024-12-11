@@ -1,4 +1,4 @@
-dateModified: 1733863400
+dateModified: 1733916371
 elementSources:
   craft\elements\Entry:
     -
@@ -98,7 +98,7 @@ meta:
     2c4508b1-08d6-4a8d-8f93-f65a3567bd33: 'Craft Adventure' # Craft Adventure
     2fdf3bea-0b0d-4dbc-9395-0fb0a6a83eb4: Description # Description
     3e3c8669-7e71-4e90-8abc-41878a67915a: '<<<<Data' # <<<<Data
-    3e3f9254-b8c6-426f-a749-87cd06373172: Goodies_entrytype # Goodies_entrytype
+    3e3f9254-b8c6-426f-a749-87cd06373172: Goodies # Goodies
     4ab0679b-8d81-40c7-9ae6-ed83c81f7709: 'Public Schema' # Public Schema
     4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
     7ede29f1-a5b0-4199-a5eb-3ead0a9e434b: 'Primary Navigation' # Primary Navigation
@@ -113,6 +113,7 @@ meta:
     496b0e75-90ef-4e0a-a73c-7d9c71277786: Bills # Bills
     586e0402-4f95-4bd6-bf66-163ceddb661a: 'Stash User' # Stash User
     945ae902-ab96-460c-b14a-58bb63df7a59: Price # Price
+    5823d11b-bb6e-4ad0-b025-e4b52b2cf2e2: Stash # Stash
     6705ef7e-3731-42cd-ac26-4270d49d2c3b: User # User
     19503ef4-21c6-4137-b009-a10589cc1068: Stats # Stats
     019761cc-451c-462b-ba41-2f6a73d32e45: Referentie # Referentie
@@ -130,6 +131,7 @@ meta:
     caef1356-0349-4d6c-a6e7-3cb9cbf4caae: Image # Image
     ceae2617-0f34-4fa2-a6a2-46cb108b01c1: 'Stash Items' # Stash Items
     cef39ee2-c0e2-4c53-8399-3520bd59fee0: Items # Items
+    d7475a0d-37cd-4900-88b4-3dfcc4e00b30: Amount # Amount
     e70632e0-75da-4912-b558-c78afa869242: Stats # Stats
     f6ad7243-5f24-4d89-a935-bfd49c30a7b7: Adventures # Adventures
     f57bae4b-b9ee-49c1-8e4a-8239be75107b: Adventure # Adventure

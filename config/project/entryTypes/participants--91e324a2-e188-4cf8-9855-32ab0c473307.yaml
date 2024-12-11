@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   cd9dc802-e9a5-4394-a319-c023d1799faa:
     tabs:
@@ -42,7 +42,7 @@ fieldLayouts:
         userCondition: null
 handle: participants
 hasTitleField: false
-icon: users
+icon: arrow-right
 name: Participants
 showSlugField: true
 showStatusField: true

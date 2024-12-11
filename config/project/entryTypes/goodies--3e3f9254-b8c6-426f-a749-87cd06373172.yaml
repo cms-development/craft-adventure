@@ -1,4 +1,4 @@
-color: fuchsia
+color: yellow
 fieldLayouts:
   f9569f72-caab-4552-8b22-bbb9c4684501:
     tabs:
@@ -70,10 +70,10 @@ fieldLayouts:
         name: Content
         uid: 794489f8-0d36-4304-8427-8dd5449fee14
         userCondition: null
-handle: goodiesEntrytype
+handle: goodies
 hasTitleField: true
-icon: crab
-name: Goodies_entrytype
+icon: backpack
+name: Goodies
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

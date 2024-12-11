@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   53a54c5d-a11e-43df-9783-dfb7638c0d89:
     tabs:
@@ -42,7 +42,7 @@ fieldLayouts:
         userCondition: null
 handle: billItems
 hasTitleField: false
-icon: ''
+icon: arrow-right
 name: 'Bill Items'
 showSlugField: true
 showStatusField: true

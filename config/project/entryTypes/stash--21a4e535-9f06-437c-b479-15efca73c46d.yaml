@@ -1,4 +1,4 @@
-color: emerald
+color: yellow
 fieldLayouts:
   99f24052-cd6c-4a7e-91bf-f6904f9d8958:
     tabs:
@@ -86,9 +86,9 @@ fieldLayouts:
         name: Content
         uid: ec19491b-df9d-49f4-8a28-c4003325983e
         userCondition: null
-handle: stash_entrytype
+handle: stash
 hasTitleField: true
-icon: alien-8bit
+icon: album-collection
 name: Stash
 showSlugField: true
 showStatusField: true

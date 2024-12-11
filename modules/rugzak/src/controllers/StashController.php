@@ -12,12 +12,20 @@ class StashController extends Controller
 {
     use StashTrait; // some helper methods
 
+    private $userId;
+
+    public function init() : void {
+        parent::init();
+
+        // get the logged in user id
+        $this->userId = Craft::$app->getUser()->getIdentity()->getId();
+    }
+    
     /**
      * This method is called before the action methods are run.
      * By adding the AccessControl behavior, we can ensure that only logged in users can access the methods in this controller.
      */
-    public function behaviors(): array
-    {
+    public function behaviors(): array {
         return array_merge(parent::behaviors(), [
             'access' => [
                 'class' => AccessControl::class,
@@ -39,7 +47,7 @@ class StashController extends Controller
         $goodieId = Craft::$app->getRequest()->getRequiredParam('goodie');
         
         // get logged in user id
-        $userId = Craft::$app->getUser()->getIdentity()->getId();
+        $userId = $this->userId;
 
         // find existing open stash, if not found create a new one
         $entry = $this->findOrCreateStash($userId);
@@ -48,8 +56,7 @@ class StashController extends Controller
         $itemQuery = $entry->getFieldValue('stash_items'); // stash_items is the handle of the matrix field
         $existing_items = $itemQuery->all(); // Get all the items
         
-        // create a new array with the existing items
-        // we need a sorted array of item ids
+        // create a new array with the existing items, we need this to update the sortOrder array
         $stash_items = [
             'sortOrder' => array_map(fn($item) => $item->id, $existing_items)
         ];
@@ -109,8 +116,9 @@ class StashController extends Controller
     }
 
     private function createNewStashItem($entry, $goodieId) {
-        $userId = Craft::$app->getUser()->getIdentity()->getId();
-        $itemFieldId = $entry->getFieldValue('stash_items')->one()->fieldId;
+        
+        $userId = $this->userId;
+        $itemFieldId = $entry->stash_items->fieldId[0];
 
         // get the goodie entry for some basic data
         $goodie = Entry::find()
@@ -123,16 +131,15 @@ class StashController extends Controller
         $newItem = new Entry(); // Maak een nieuw item aan
         
         // meta data
-        $newItem->fieldId = $itemFieldId; // De ID van het matrix veld
-        $newItem->typeId = 10; // De ID van het entry type
+        $newItem->fieldId = $itemFieldId; // De ID van het matrix veldx
         $newItem->authorId = $userId; // De ID van de auteur
         $newItem->ownerId = $entry->id; // De ID van de entry waartoe het item behoort
         $newItem->enabled = true; // Zorg dat het item is ingeschakeld
         
         // fields
         $newItem->title = $goodie->title . ' - ' . date('D d M H:i', strtotime('+7 days')); // Zorg dat de titel uniek is
-        $newItem->setFieldValue('goodie', [ $goodieId ]);
-        $newItem->setFieldValue('price', $goodie->price->getAmount()); 
+        $newItem->goodie = [ $goodieId ];
+        $newItem->price = $goodie->price->getAmount(); 
          
         // Sla het item op
         Craft::$app->getElements()->saveElement($newItem);

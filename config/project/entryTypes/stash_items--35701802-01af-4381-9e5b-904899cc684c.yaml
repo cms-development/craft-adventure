@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   24c242b6-7ae2-4de6-aeba-500c61ce86bb:
     tabs:
@@ -67,12 +67,28 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2024-12-11T08:00:05+00:00'
+            elementCondition: null
+            fieldUid: d7475a0d-37cd-4900-88b4-3dfcc4e00b30 # Amount
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c0d8933-39a6-41e4-897c-3fe11c8f120e
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: 3e6e975b-8ad3-4739-a767-cbbd07fd55f0
         userCondition: null
 handle: stash_items
 hasTitleField: true
-icon: ''
+icon: arrow-right
 name: 'Stash Items'
 showSlugField: true
 showStatusField: true

@@ -1,0 +1,19 @@
+columnSuffix: null
+handle: amount
+instructions: null
+name: Amount
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 1
+  max: null
+  min: 1
+  prefix: null
+  previewCurrency: null
+  previewFormat: none
+  size: null
+  step: 1
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

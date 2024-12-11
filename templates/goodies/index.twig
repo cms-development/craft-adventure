@@ -1,3 +1,7 @@
+{% if not currentUser %}
+    {% redirect 'authentication/login' %}
+{% endif %}
+
 {% extends '_shared/_layout.twig' %}
 {% set goodies = craft.entries.section('goodies_section').all() %}
 {% set stash = craft.entries()
@@ -41,6 +45,7 @@
             {% endfor %}
             </div>
             <hr>
+            {% if stash %}
             <div class="row mb-5">
                 <div class="col-12">
                     <h2>Rugzak</h2>
@@ -54,24 +59,39 @@
                             </tr>
                         </thead>
                         <tbody>
-
+                            {% set totalPrice = 0 %}
                             {% for item in stash.stash_items %}
                                 <tr>
                                     <td>{{ item.title }}</td>
                                     <td>€ {{ item.price.amount / 100 }}</td>
-                                    <td>1</td>
-                                    <td>€ {{ item.price.amount / 100 }}</td>
+                                    <td>{{ item.amount }}</td>
+                                    <td>€ {{ item.price.amount * item.amount / 100 }}</td>
                                 </tr>
+                                {% set totalPrice = totalPrice + item.price.amount * item.amount / 100 %}
                             {% endfor %}
                             <tr>
                                 <td colspan="3">Totaal</td>
-                                {# <td>€ {{ cart.total }}</td> #}
+                                <td>€ {{ totalPrice }}</td>
                             </tr>
                         </tbody>
                     </table>
-                    <a href="/rugzak/checkout" class="btn btn-danger">Afrekenen</a>
+                    <form method="post">
+                        {{ csrfInput() }}
+                        {{ actionInput("mollie-payments/payment/pay") }}
+                        {{ redirectInput("rekening/geslaagd") }}
+                        <input type="hidden" name="amount" value="{{ totalPrice|hash }}">
+                        <input type="hidden" name="form" value="{{ 'afrekenen'|hash }}">
+                        <input type="hidden" id="email" name="email" value="{{ currentUser.email }}">
+                        <input type="hidden" id="name" name="fields[firstName]" value="{{ currentUser.firstName }}">
+                        <input type="hidden" id="name" name="fields[lastname]" value="{{ currentUser.firstName }}">
+                        <input type="hidden" id="stash" name="fields[stash]" value="{{ stash.uid }}">
+                        <button type="submit" class="btn btn-danger">
+                            {{ "Betaal"|t }}
+                        </button>
+                    </form>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>

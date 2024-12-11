@@ -1,7 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 3e3f9254-b8c6-426f-a749-87cd06373172 # Goodies_entrytype
+  - 3e3f9254-b8c6-426f-a749-87cd06373172 # Goodies
 handle: goodies_section
 maxAuthors: 1
 name: Goodies
