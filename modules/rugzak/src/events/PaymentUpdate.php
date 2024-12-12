@@ -43,48 +43,63 @@ class PaymentUpdate {
         );
     }
 
+    /**
+     * Updates the stash with the given transaction ID.
+     *
+     * @param string $transactionId The ID of the transaction to update the stash with.
+     *
+     * @return void
+     */
     private static function updateStash($transactionId) {
-        //  $transactionId = "tr_UAdDeEc6k6";
-
-        // Make DB query to get payment
+        // get the payment ID from the transaction
         $transactionRecord = (new Query())
             ->select(['payment'])
             ->from('mollie_transactions')
             ->where(['id' => $transactionId])
             ->one();
         
+        // check if the transaction was found
         if ($transactionRecord) {
+            // get the payment ID
             $paymentId = $transactionRecord['payment'];
         } else {
+            // log an error and return
             Craft::error('Transaction not found: ' . $transactionId, __METHOD__);
             return;
         }
 
+        // find the payment
         $payment = Payment::find()
             ->id($paymentId)
             ->one();
         
-        if ($payment) {
-            $stashId = $payment->stash;
+        // check if the payment was found
+        if (!$payment) {
+            Craft::error('Payment not found: ' . $paymentId, __METHOD__);
+            return;
+        }
 
-            $stash = Entry::find()
+        // get the stash ID from the payment
+        $stashId = $payment->stash;
+
+        // find the stash
+        $stash = Entry::find()
             ->section('stash_section')
             ->uid($stashId)
             ->one();
 
-            if ($stash) {
-                // title is in this format: [OPENSTAAND] Stash voor somebody (5 items)
-                // change OPENSTAAND to BETAALD
-                $stash->title = str_replace('OPENSTAAND', 'BETAALD', $stash->title);
-                $stash->stash_status = "paid";
-            if (!Craft::$app->elements->saveElement($stash)) {
-                Craft::error('Failed to save stash element: ' . $stashId, __METHOD__);
-            }
-            } else {
+        // check if the stash was found
+        if (!$stash) {
             Craft::error('Stash not found: ' . $stashId, __METHOD__);
-            }
-        } else {
-            Craft::error('Payment not found: ' . $paymentId, __METHOD__);
+            return;
+        }
+
+        // title is in this format: [OPENSTAAND] Stash voor somebody (5 items)
+        // change OPENSTAAND to BETAALD
+        $stash->title = str_replace('OPENSTAAND', 'BETAALD', $stash->title);
+        $stash->stash_status = "paid";
+        if (!Craft::$app->elements->saveElement($stash)) {
+            Craft::error('Failed to save stash element: ' . $stashId, __METHOD__);
         }
     }
 }
