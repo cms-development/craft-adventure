@@ -1,6 +1,6 @@
 # Trail Adventure
 
-This repository contains demo code for a fictional travel agency offering adventure tours. Built with Craft CMS and developed locally using ddev, it is intended for educational purposes and not for production use. Some templates are borrowed from the [Craft CMS demo site](https://demo.craftcms.com/).
+This repository contains demo code for a fictional travel agency offering adventure tours. Built with Craft CMS and developed locally using ddev, it is intended for educational purposes and not for production use. Some templates are borrowed from CraftQuest.
 
 ## Installation
 
