@@ -22,8 +22,10 @@ class StashController extends Controller
     }
     
     /**
-     * This method is called before the action methods are run.
+     * Defines the behaviors for the StashController.
      * By adding the AccessControl behavior, we can ensure that only logged in users can access the methods in this controller.
+     *
+     * @return array An array of behaviors to be applied to the controller.
      */
     public function behaviors(): array {
         return array_merge(parent::behaviors(), [
@@ -42,6 +44,13 @@ class StashController extends Controller
         ]);
     }
 
+    /**
+     * Adds an item to the stash.
+     *
+     * This method handles the addition of an item to the user's stash.
+     *
+     * @return void
+     */
     public function actionAddItem() {
         // get the goodie id from the request
         $goodieId = Craft::$app->getRequest()->getRequiredParam('goodie');
@@ -80,6 +89,12 @@ class StashController extends Controller
         return $this->redirect('/goodies');
     }
 
+    /**
+     * Finds an existing stash for the given user ID or creates a new one if it doesn't exist.
+     *
+     * @param int $userId The ID of the user for whom to find or create the stash.
+     * @return Stash The found or newly created stash.
+     */
     private function findOrCreateStash($userId) {
         $entry = Entry::find()
             ->section('stash_section')
@@ -98,6 +113,12 @@ class StashController extends Controller
         return $entry;
     }
 
+    /**
+     * Creates a new stash for the given user.
+     *
+     * @param int $userId The ID of the user for whom the stash is being created.
+     * @return void
+     */
     private function createNewStash($userId) {
         $section = $this->getSectionByHandle('stash_section');
         $entryType = $this->getEntryType($section);
@@ -115,6 +136,13 @@ class StashController extends Controller
         return $entry;
     }
 
+    /**
+     * Creates a new stash item.
+     *
+     * @param mixed $entry The entry data for the new stash item.
+     * @param int $goodieId The ID of the goodie to be associated with the stash item.
+     * @return void
+     */
     private function createNewStashItem($entry, $goodieId) {
         
         $userId = $this->userId;
