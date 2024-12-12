@@ -1,4 +1,4 @@
-dateModified: 1733916371
+dateModified: 1734018904
 elementSources:
   craft\elements\Entry:
     -
@@ -148,7 +148,7 @@ plugins:
     licenseKey: YYSB40KXYGTQ8UYH5H1PUQ35
     schemaVersion: 5.0.0
     settings:
-      apiKey: test_MC7tbSjEvvqMCghCC5zMKjsDkAjAxc
+      apiKey: $MOLLIE_API_KEY
       manageSubscriptionEmailPath: ''
       manageSubscriptionEmailSubject: ''
       manageSubscriptionRoute: ''

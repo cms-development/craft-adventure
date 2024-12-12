@@ -10,7 +10,7 @@ This repository contains demo code for a fictional travel agency offering advent
 4. Install dependencies: `composer install`
 5. Import the database:
     - Copy `_db_snapshots` contents to `.ddev/db_snapshots`.
-    - Run `ddev snapshot restore craft-adventure_20241212163730` in the terminal.
+    - Run `ddev snapshot restore craft-adventure_20241212165655` in the terminal.
 6. Set up a tunnel for Mollie webhooks using ngrok:
     - Run `ngrok http ...`
     - Update `PRIMARY_SITE_URL` in `.env` to the ngrok URL.
