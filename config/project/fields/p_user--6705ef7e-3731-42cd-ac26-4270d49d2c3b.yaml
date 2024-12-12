@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: p_user
+instructions: null
+name: User
+searchable: false
+settings:
+  allowSelfRelations: false
+  branchLimit: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: 1
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: true
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Users

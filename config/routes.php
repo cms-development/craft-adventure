@@ -9,4 +9,15 @@
  * https://craftcms.com/docs/4.x/routing.html
  */
 
-return [];
+return [
+    [
+        'pattern' => 'rugzak/add-item/', // <goodie:\d+> is a regex pattern that matches a number
+        'route' => 'rugzak-module/stash/add-item',
+        'verb' => ['POST', 'GET'],
+    ],
+    [
+        'pattern' => 'rugzak/remove-item/<id:\d+>',
+        'route' => 'rugzak-module/stash/remove-item',
+        'verb' => 'POST',
+    ],
+];

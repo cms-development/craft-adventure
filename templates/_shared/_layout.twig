@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TrailQuest Running</title>
+    <title>TrailQuest Running | {% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="/assets/main.9b87cd94.css" />
+    <link rel="stylesheet" href="/assets/ugly.css" />
     <script type="module" src="/assets/main.eeb45929.js"></script>
+    {% block head %}
+    {% endblock %}
+    {% block css %}
+    {% endblock %}
   </head>
   <body>
     {% include '_shared/_navigation.twig' %}
@@ -15,6 +20,8 @@
     {% endblock %}
     {% include '_shared/_footer.twig' %}
     <script type="module" src="/src/main.js"></script>
+    {% block js %}
+    {% endblock %}
   </body>
 </html>
 

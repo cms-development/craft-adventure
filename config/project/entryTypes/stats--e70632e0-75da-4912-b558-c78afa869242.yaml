@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   ca3daadc-e574-4613-9786-85eb7705c623:
     tabs:
@@ -26,7 +26,7 @@ fieldLayouts:
         userCondition: null
 handle: stats
 hasTitleField: false
-icon: table-cells-large
+icon: arrow-right
 name: Stats
 showSlugField: true
 showStatusField: true

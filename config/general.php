@@ -12,6 +12,7 @@ use craft\config\GeneralConfig;
 use craft\helpers\App;
 
 return GeneralConfig::create()
+    ->devMode(true)
     // Set the default week start day for date pickers (0 = Sunday, 1 = Monday, etc.)
     ->defaultWeekStartDay(1)
     // Prevent generated URLs from including "index.php"
@@ -20,6 +21,8 @@ return GeneralConfig::create()
     ->preloadSingles()
     // Prevent user enumeration attacks
     ->preventUserEnumeration()
+    // enable pro
+    
     // Set the @webroot alias so the clear-caches command knows where to find CP resources
     ->aliases([
         '@web' => App::env('PRIMARY_SITE_URL'),

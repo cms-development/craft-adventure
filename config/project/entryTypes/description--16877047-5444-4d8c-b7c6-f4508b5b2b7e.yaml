@@ -1,4 +1,4 @@
-color: null
+color: red
 fieldLayouts:
   55bd1482-1257-427a-bf6f-041874bd173e:
     tabs:
@@ -26,7 +26,7 @@ fieldLayouts:
         userCondition: null
 handle: description
 hasTitleField: false
-icon: align-justify
+icon: arrow-right
 name: Description
 showSlugField: true
 showStatusField: true

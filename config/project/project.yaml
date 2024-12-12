@@ -1,4 +1,83 @@
-dateModified: 1733317860
+dateModified: 1733916371
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      type: native
+    -
+      key: singles
+      type: native
+    -
+      heading: Channels
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa' # Adventures
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:a5f2bd87-c84f-41d1-a25e-a7d44786e1bd' # Goodies
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      key: 'section:473330f5-ff7c-4672-b323-35d7d64bedf4' # Voorraad
+      type: native
+    -
+      heading: 'Voorbereiding oud'
+      type: heading
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:496b0e75-90ef-4e0a-a73c-7d9c71277786' # Bills
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - authors
+        - link
+      type: native
+    -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\TypeConditionRule
+            operator: in
+            uid: 46d7406d-c64c-4ab7-9961-0b6bb526e408
+            values:
+              - ff3205ea-1bcd-488e-8c93-ebee74cece57 # Bill Items
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - id
+        - asc
+      defaultViewMode: ''
+      key: 'custom:29fc14a8-f269-4fa1-a04f-d2953560d4e7'
+      label: Items
+      tableAttributes: '-'
+      type: custom
 email:
   fromEmail: frederick@rogerthat.be
   fromName: 'Craft Adventure'
@@ -14,25 +93,50 @@ fs:
 meta:
   __names__:
     0fa2114d-a126-45d6-9a44-398ac1506685: Subtitle # Subtitle
+    1a5a3e2a-c42c-49db-81e9-94deb3ed0aa8: Bills # Bills
+    1c53ab5c-fc30-4d59-8097-ad14208a07f6: 'Stash Status' # Stash Status
     2c4508b1-08d6-4a8d-8f93-f65a3567bd33: 'Craft Adventure' # Craft Adventure
+    2fdf3bea-0b0d-4dbc-9395-0fb0a6a83eb4: Description # Description
     3e3c8669-7e71-4e90-8abc-41878a67915a: '<<<<Data' # <<<<Data
+    3e3f9254-b8c6-426f-a749-87cd06373172: Goodies # Goodies
     4ab0679b-8d81-40c7-9ae6-ed83c81f7709: 'Public Schema' # Public Schema
     4ae55be6-0fdb-40d0-b398-0428c85d6271: 'Craft Adventure' # Craft Adventure
     7ede29f1-a5b0-4199-a5eb-3ead0a9e434b: 'Primary Navigation' # Primary Navigation
+    8ac5cf25-30f0-49a4-af8c-054c85dc9796: Status # Status
+    21a4e535-9f06-437c-b479-15efca73c46d: Stash # Stash
     64d1ac8f-3df0-4f92-9ef5-cd5c4c8484fa: Adventures # Adventures
     65ac9c48-7e34-4d8d-9817-19e9308fa99a: Homepage # Homepage
+    91e324a2-e188-4cf8-9855-32ab0c473307: Participants # Participants
     92ffea12-c5ef-4211-80f4-334640d64f7a: Simple # Simple
+    150c102d-f991-419c-a945-f3421acce4c0: Status # Status
     156f3a3e-e29f-4f97-a114-e891664bfd22: 'Card Thumbnail' # Card Thumbnail
+    496b0e75-90ef-4e0a-a73c-7d9c71277786: Bills # Bills
+    586e0402-4f95-4bd6-bf66-163ceddb661a: 'Stash User' # Stash User
+    945ae902-ab96-460c-b14a-58bb63df7a59: Price # Price
+    5823d11b-bb6e-4ad0-b025-e4b52b2cf2e2: Stash # Stash
+    6705ef7e-3731-42cd-ac26-4270d49d2c3b: User # User
     19503ef4-21c6-4137-b009-a10589cc1068: Stats # Stats
     019761cc-451c-462b-ba41-2f6a73d32e45: Referentie # Referentie
+    473330f5-ff7c-4672-b323-35d7d64bedf4: Voorraad # Voorraad
+    476880a7-807b-4837-bc80-1918ffd94639: 'Bill User' # Bill User
     9450365f-cc76-4e56-aca0-d4c709fbd40b: Homepage # Homepage
     16877047-5444-4d8c-b7c6-f4508b5b2b7e: Description # Description
+    35701802-01af-4381-9e5b-904899cc684c: 'Stash Items' # Stash Items
+    a5f2bd87-c84f-41d1-a25e-a7d44786e1bd: Goodies # Goodies
+    abdf7c49-0c4f-4a8d-b84f-c56f23facbfd: Goodie # Goodie
     ac863cc6-fab1-408a-a142-70ca9f1dadf1: 'Dynamic Content' # Dynamic Content
+    acbb4ff0-8cce-4db3-86ba-4133bc11803b: Participants # Participants
+    b6fae5d4-ae98-4877-aa27-aa289d0ca3d6: 'Bill Items' # Bill Items
+    c55ca0a9-4bd6-409b-afd8-c1884dafecd0: Team # Team
     caef1356-0349-4d6c-a6e7-3cb9cbf4caae: Image # Image
+    ceae2617-0f34-4fa2-a6a2-46cb108b01c1: 'Stash Items' # Stash Items
     cef39ee2-c0e2-4c53-8399-3520bd59fee0: Items # Items
+    d7475a0d-37cd-4900-88b4-3dfcc4e00b30: Amount # Amount
     e70632e0-75da-4912-b558-c78afa869242: Stats # Stats
     f6ad7243-5f24-4d89-a935-bfd49c30a7b7: Adventures # Adventures
+    f57bae4b-b9ee-49c1-8e4a-8239be75107b: Adventure # Adventure
     fd47350d-f16c-4921-bebe-2ee0b594f7df: Images # Images
+    ff3205ea-1bcd-488e-8c93-ebee74cece57: 'Bill Items' # Bill Items
 plugins:
   ckeditor:
     edition: standard
@@ -50,15 +154,8 @@ plugins:
       manageSubscriptionRoute: ''
       pluginLabel: Payments
 system:
-  edition: solo
+  edition: team
   live: true
   name: 'Craft Adventure'
   schemaVersion: 5.5.0.0
   timeZone: America/Los_Angeles
-users:
-  allowPublicRegistration: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  require2fa: false
-  requireEmailVerification: true

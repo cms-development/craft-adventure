@@ -1,0 +1,44 @@
+
+
+{# Load section + entry type definitions: #}
+{% set section = craft.app.entries.getSectionByHandle('adventures') %}
+{% set entryType = craft.app.entries.getEntryTypeByHandle('adventures') %}
+
+{# If there were any validation errors, an `entry` variable will be 
+   passed back to the template, containing the POSTed values, as-is, 
+   and validation errors. If that’s *not* present, we stub out a new
+   entry object: #}
+{% set entry = entry ?? create({
+  class: 'craft\\elements\\Entry',
+  sectionId: section.id,
+  typeId: entryType.id,
+}) %}
+
+{# dump section and entryType #}
+{# {{ dump(section) }}
+{{ dump(entryType) }}
+{{ dump(entry)}} #}
+
+
+{# Add `enctype="multipart/form-data"` to `<form>` if you’re uploading files! #}
+<form method="post" accept-charset="UTF-8">
+  {{ csrfInput() }}
+  {{ actionInput('entries/save-entry') }}
+  {{ redirectInput('{url}') }}
+
+  {# Output the section + entry type values so they are preserved when data is sent to Craft: #}
+  {{ hiddenInput('sectionId', entry.sectionId) }}
+  {{ hiddenInput('typeId', entry.typeId) }}
+  {{ hiddenInput('entryId', entry.id) }}
+
+  {{ hiddenInput('enabled', true) }}
+
+  <label for="title">Title</label>
+  {{ input('text', 'title', entry.title, {
+    id: 'title',
+  }) }}
+  {{ _self.errorList(entry.getErrors('title')) }}
+
+
+  <button type="submit">Publish</button>
+</form>
