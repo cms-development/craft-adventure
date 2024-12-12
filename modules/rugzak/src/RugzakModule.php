@@ -15,7 +15,8 @@ class RugzakModule extends Module implements BootstrapInterface
         // Craft::info('Rugzak module geladen', __METHOD__);
 
         // Register Events
-        PaymentUpdate::handle();
+        PaymentUpdate::handle();     
+
     }
 
     public function bootstrap($app)

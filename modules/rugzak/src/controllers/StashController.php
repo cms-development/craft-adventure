@@ -96,6 +96,8 @@ class StashController extends Controller
      * @return Stash The found or newly created stash.
      */
     private function findOrCreateStash($userId) {
+
+        // find the stash entry for the given user
         $entry = Entry::find()
             ->section('stash_section')
             ->stash_status('open')
@@ -106,10 +108,12 @@ class StashController extends Controller
             ->orderBy('dateCreated DESC')
             ->one();
 
+        // if no stash is found, create a new one
         if (!$entry) {
             $entry = $this->createNewStash($userId);
         }
 
+        // return the found or newly created stash
         return $entry;
     }
 

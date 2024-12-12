@@ -27,13 +27,9 @@ return [
     'modules' => [
         'rugzak-module' => [
             'class' => \modules\rugzak\RugzakModule::class,
-        ],
-        'winkelmandje-module' => [
-            'class' => \modules\winkelmandje\WinkelmandjeModule::class,
-        ],
+        ]
     ],
     'bootstrap' => [
         'rugzak-module', 
-        'winkelmandje-module'
     ],
 ];
