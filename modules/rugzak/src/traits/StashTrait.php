@@ -6,6 +6,10 @@ use Craft;
 use craft\records\EntryType;
 use craft\records\Section;
 
+/**
+ * StashTrait class.
+ * This trait provides helper methods for the StashController.
+ */
 trait StashTrait
 {
     public function getSectionByHandle($sectionHandle)

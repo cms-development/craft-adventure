@@ -26,6 +26,7 @@ class PaymentUpdate {
             }
         );
 
+        // listen for the transaction update event
         Event::on(
             Transaction::class,
             MolliePayments::EVENT_AFTER_TRANSACTION_UPDATE,
@@ -41,7 +42,6 @@ class PaymentUpdate {
                     // finally, update the related stash
                     self::updateStash($transactionUId);
                 }
-
             }
         );
     }

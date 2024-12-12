@@ -12,17 +12,14 @@ class RugzakModule extends Module implements BootstrapInterface
     {
         parent::init();
 
-        // Craft::info('Rugzak module geladen', __METHOD__);
-
-        // Register Events
+        // The PaymentUpdate class is a custom class that listens for payment events
+        // when a payment is updated, it will update the stash
         PaymentUpdate::handle();     
 
     }
 
     public function bootstrap($app)
     {
-
-
         /*
             The bootstrap method in a Yii module is typically used to perform actions 
             that need to be executed when the application is bootstrapping, 
