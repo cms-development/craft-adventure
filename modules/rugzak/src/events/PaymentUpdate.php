@@ -30,12 +30,15 @@ class PaymentUpdate {
             Transaction::class,
             MolliePayments::EVENT_AFTER_TRANSACTION_UPDATE,
             function (TransactionUpdateEvent $event) {
-                // handle the event here
+                // log the event
                 Craft::info(['Transactie update']);
-                Craft::info($event->transaction['id']);
                 
+                // check if the status is paid
                 if($event->status == "paid") {
+                    // obtain the transaction ID from the event
                     $transactionUId = $event->transaction['id'];
+
+                    // finally, update the related stash
                     self::updateStash($transactionUId);
                 }
 
